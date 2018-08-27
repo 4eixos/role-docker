@@ -1,0 +1,12 @@
+---
+# tasks file for docker
+
+- include_tasks: docker_debian.yml
+  when: (ansible_os_family|lower == 'debian')
+
+- include_tasks: docker_centos.yml
+  when: (ansible_os_family|lower == 'redhat')
+
+- include: docker-compose.yml
+  when: install_compose == 'yes'
+

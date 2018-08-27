@@ -1,0 +1,6 @@
+---
+# defaults file for docker
+
+install_compose: 'yes'
+
+docker_compose_version: '1.22.0'
