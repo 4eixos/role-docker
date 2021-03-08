@@ -1,11 +1,13 @@
 {
+  {% if DOCKER_POOL_IPS is defined %}
   "default-address-pools":
   [
     {"base": "{{DOCKER_POOL_IPS}}","size": {{DOCKER_POOL_IPS_SIZE}}}
   ],
-  "log-driver": "json-file",
+  {% endif %}
+"log-driver": "json-file",
   "log-opts": {
-    "max-size": "1g",
-    "max-file": "3"
+    "max-size": "{{log_opts_max_size}}",
+    "max-file": "{{log_opts_max_file}}"
   }
 }

@@ -1,8 +1,7 @@
 ---
 # tasks file for docker
 
-- include: pre_install_network.yml
-  when: DOCKER_POOL_IPS is defined
+- include: pre_install_daemonconfig.yml
 
 - include_tasks: docker_debian.yml
   when: (ansible_os_family|lower == 'debian')

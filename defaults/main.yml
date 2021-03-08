@@ -6,3 +6,6 @@ install_compose: 'yes'
 docker_compose_version: '1.23.2'
 
 DOCKER_POOL_IPS_SIZE: 24
+
+log_opts_max_file: '3'
+log_opts_max_size: '1g'
