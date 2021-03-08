@@ -2,9 +2,11 @@
   stat: 'path=/etc/init.d/docker'
   register: servicestatus
 
-- fail:
+- name: Print docker is already installed
+  debug:
     msg: "Docker is already installed, it is not possible to change the default IP, do not use the variable DOCKER_POOL_IPS"
-  when: servicestatus.stat.exists
+  when: ( servicestatus.stat.exists ) and
+        ( DOCKER_POOL_IPS is defined )
 
 - name: "Create folder"
   file:
