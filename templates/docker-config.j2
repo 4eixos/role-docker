@@ -1,12 +1,11 @@
 {
   "default-address-pools":
   [
-    {"base": "{{DOCKER_POOL_IPS}}","size": {{DOCKER_POOL_IPS_SIZE}},
-      "log-driver": "json-file",
-      "log-opts": {
-        "max-size": "1g",
-        "max-file": "3"
-      }
-    }
-  ]
+    {"base": "{{DOCKER_POOL_IPS}}","size": {{DOCKER_POOL_IPS_SIZE}}}
+  ],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "1g",
+    "max-file": "3"
+  }
 }
